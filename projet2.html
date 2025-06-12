@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet 2 : Développement du jeu Puissance X avec interface et robot</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="projets.html" class="active">Projets</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="projet-detail">
+            <h1>Projet 2 : Développement du jeu Puissance X avec interface et robot</h1>
+            <hr>
+            <div class="projet-desc">
+                <p><strong>Sujet :</strong>
+                Dans ce projet, j’ai conçu une version du jeu Puissance X en Java, jouable à la fois via une interface console et avec une interface graphique, en m’appuyant sur le framework Boardifier. L’objectif était de permettre aux joueurs d’interagir facilement avec le jeu tout en respectant les règles classiques du Puissance 4, adaptées à une grille personnalisable. Une extension avec un robot joueur a également été intégrée.</p>
+                <p>Ce projet m’a permis de consolider mes compétences en programmation orientée objet, en interaction homme-machine (IHM), ainsi qu’en conception logicielle structurée.</p>
+            </div>
+            <hr>
+            <div class="projet-image">
+                <img src="images/projet2_fig1.png" alt="Figure 1 : Affichage en mode texte et détection d'une entrée invalide dans le jeu Puissance X">
+                <figcaption>Figure 1 : Affichage en mode texte et détection d'une entrée invalide dans le jeu Puissance X</figcaption>
+            </div>
+            <div class="projet-trace">
+                <h3>Trace :</h3>
+                <p>
+                    La Figure 1 montre une capture d’écran de l’interface console du jeu, réalisée dans l’IDE IntelliJ. On y voit la grille affichée en mode texte, avec une tentative de saisie invalide ("A") par le joueur 1. Le programme détecte l’erreur et affiche un message : "Please enter a valid integer".
+                </p>
+                <p>
+                    Cette fonctionnalité repose sur l’utilisation d’un Scanner pour lire l’entrée clavier, accompagnée d’un bloc de validation qui contrôle si l’entrée est un entier attendu. Une boucle permet de redemander la saisie tant qu’elle est incorrecte, évitant ainsi les plantages du programme.
+                </p>
+                <p>
+                    Ce composant du projet met en lumière des notions clés comme la gestion des entrées utilisateur, la robustesse du code face aux erreurs, et la mise en œuvre de structures conditionnelles efficaces pour garantir une bonne expérience de jeu.
+                </p>
+            </div>
+            <div class="projet-image">
+                <img src="images/projet2_fig2.png" alt="Figure 2 : Organisation du projet selon le modèle MVC (Modèle-Vue-Contrôleur)">
+                <figcaption>Figure 2 : Organisation du projet selon le modèle MVC (Modèle-Vue-Contrôleur)</figcaption>
+            </div>
+            <div class="projet-trace">
+                <h3>Trace :</h3>
+                <p>
+                    La Figure 2 illustre l’organisation du projet selon le paradigme MVC. Dans la partie gauche, on distingue trois dossiers principaux : model, view et controller, chacun correspondant à un rôle précis dans l’application. Ce découpage structurel est imposé par le framework Boardifier, facilitant la séparation des responsabilités.
+                </p>
+                <p>
+                    Dans la partie droite, on aperçoit le code de l’initialisation du jeu : le modèle (la logique du plateau et des règles), la vue (l’affichage), et le contrôleur (la gestion des actions du joueur) sont instanciés séparément, puis interconnectés.
+                </p>
+                <p>
+                    Cette figure met en valeur mon appropriation d’un modèle d’architecture logicielle robuste, l’utilisation de l’héritage et du polymorphisme, ainsi qu’une bonne organisation modulaire du code. L’approche MVC a permis une meilleure lisibilité du projet, une évolution plus facile, et une possible extension vers d’autres interfaces (par exemple une IHM graphique ou une intelligence artificielle pour jouer automatiquement).
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 - Mon Portfolio</p>
+    </footer>
+</body>
+</html> 

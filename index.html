@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Ajout de Font Awesome pour les icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html" class="active">Accueil</a></li>
+            <li><a href="projets.html">Projets</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <h1>Bienvenue sur mon Portfolio</h1>
+            <p>Étudiant en BUT Informatique</p>
+        </section>
+
+        <section class="projets-carousel">
+            <h2 class="carousel-title">Mes Projets</h2>
+            <div class="carousel-container">
+                <button class="carousel-button prev">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="carousel">
+                    <div class="carousel-item active">
+                        <img src="images/ecommerce_cover.png" alt="Application de gestion de stock">
+                        <div class="carousel-overlay">
+                            <h3>Projet 1 : Application de gestion de stock</h3>
+                            <p>Gérez vos produits, déclinaisons, fournisseurs et stocks en toute simplicité.</p>
+                            <a href="projet1.html" class="btn-details">Voir le projet</a>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/puissancex_cover.png" alt="PuissanceX">
+                        <div class="carousel-overlay">
+                            <h3>Projet 2 : PuissanceX avec interface et robot</h3>
+                            <p>Un jeu interactif en Java, console et robot.</p>
+                            <a href="projet2.html" class="btn-details">Voir le projet</a>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-button next">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 - Mon Portfolio</p>
+    </footer>
+
+    <script>
+        // Carousel JS
+        const items = document.querySelectorAll('.carousel-item');
+        const prevBtn = document.querySelector('.carousel-button.prev');
+        const nextBtn = document.querySelector('.carousel-button.next');
+        let current = 0;
+
+        function showItem(index) {
+            items.forEach((item, i) => {
+                item.classList.toggle('active', i === index);
+            });
+        }
+
+        prevBtn.addEventListener('click', () => {
+            current = (current - 1 + items.length) % items.length;
+            showItem(current);
+        });
+
+        nextBtn.addEventListener('click', () => {
+            current = (current + 1) % items.length;
+            showItem(current);
+        });
+
+        // Optionnel : swipe mobile
+        let startX = 0;
+        document.querySelector('.carousel').addEventListener('touchstart', e => {
+            startX = e.touches[0].clientX;
+        });
+        document.querySelector('.carousel').addEventListener('touchend', e => {
+            let endX = e.changedTouches[0].clientX;
+            if (endX - startX > 50) prevBtn.click();
+            if (startX - endX > 50) nextBtn.click();
+        });
+    </script>
+</body>
+</html> 
